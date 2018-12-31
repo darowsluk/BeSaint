@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BeSaint</string>
+    <string name="res_txtProjectName">BeSaint Project</string>
+    <string name="res_txtImageSaints">Picture of three saints</string>
+    <string name="res_txtDescription1">Spiritual growth is for everyone.</string>
+    <string name="res_txtDescription2">Learn from the saints</string>
+    <string name="res_txtDescription3">and start your own journey!</string>
+    <string name="res_btnStart">START</string>
 </resources>

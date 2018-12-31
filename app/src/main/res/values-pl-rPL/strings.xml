@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BeSaint</string>
+    <string name="res_txtProjectName">Projekt BeSaint</string>
+    <string name="res_txtImageSaints">Zdjęcia trzech świętych</string>
+    <string name="res_txtDescription1">Świętość jest dla każdego.</string>
+    <string name="res_txtDescription2">Ucz się od świętych</string>
+    <string name="res_txtDescription3">i rozpocznij swoją własną podróź!</string>
+    <string name="res_btnStart">START</string>
+</resources>
