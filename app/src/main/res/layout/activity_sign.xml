@@ -4,82 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="25dp">
+    tools:context=".SignActivity">
 
-    <ImageView
-        android:id="@+id/id_imgSaints"
+    <TextView
+        android:id="@+id/id_txtSignHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:contentDescription="@string/res_txtImageSaints"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_txtProjectName"
-        app:srcCompat="@drawable/load_saints" />
-
-    <TextView
-        android:id="@+id/id_txtProjectName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/res_txtProjectName"
+        android:gravity="center_horizontal"
+        android:text="@string/res_txtSignHeader"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/id_txtDescription1"
+        android:id="@+id/id_txtSignDescription1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/res_txtDescription1"
+        android:gravity="center_horizontal"
+        android:text="@string/res_txtSignDescription"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_imgSaints" />
+        app:layout_constraintTop_toBottomOf="@+id/id_txtSignHeader" />
 
     <TextView
-        android:id="@+id/id_txtDescription2"
-        android:layout_width="wrap_content"
+        android:id="@+id/id_txtSignDescription2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/res_txtDescription2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:gravity="center_horizontal"
+        android:text="@string/res_txtSignDescription2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_txtDescription1" />
-
-    <TextView
-        android:id="@+id/id_txtDescription3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/res_txtDescription3"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_txtDescription2"
-        tools:text="@string/res_txtDescription3" />
+        app:layout_constraintTop_toBottomOf="@+id/id_txtSignDescription1" />
 
     <Button
-        android:id="@+id/id_btnStart"
+        android:id="@+id/id_btnOK"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -87,10 +64,36 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
-        android:onClick="onStartClick"
-        android:text="@string/res_btnStart"
+        android:text="@string/res_btnOK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/id_txtNameEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/id_btnOK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_txtSignDescription2"
+        app:layout_constraintVertical_bias="0.303" />
+
+    <TextView
+        android:id="@+id/id_txtNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/res_txtName"
+        app:layout_constraintBottom_toTopOf="@+id/id_txtNameEdit"
+        app:layout_constraintStart_toStartOf="@+id/id_txtNameEdit" />
 
 </android.support.constraint.ConstraintLayout>
