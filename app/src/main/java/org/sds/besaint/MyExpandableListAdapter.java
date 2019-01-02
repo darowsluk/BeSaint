@@ -1,6 +1,7 @@
 package org.sds.besaint;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 
 public class MyExpandableListAdapter extends BaseExpandableListAdapter {
 
+    public static final String PARAM1 = "org.sds.besaint.PARAM1";
+    public static final String PARAM2 = "org.sds.besaint.PARAM2";
     private final SparseArray<Group> groups;
     public LayoutInflater inflater;
     public Activity activity;
@@ -35,7 +38,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getChildView(int groupPosition,
+    public View getChildView(final int groupPosition,
                              final int childPosition,
                              boolean isLastChild,
                              View convertView,
@@ -50,8 +53,12 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, children,
-                        Toast.LENGTH_SHORT).show();
+/*                Toast.makeText(activity, children,
+                        Toast.LENGTH_SHORT).show();*/
+                Intent intent = new Intent(v.getContext(), JourneyDetailsActivity.class);
+                intent.putExtra(PARAM1, groupPosition);
+                intent.putExtra(PARAM2, childPosition);
+                v.getContext().startActivity(intent);
             }
         });
         return convertView;

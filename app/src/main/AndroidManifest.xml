@@ -25,7 +25,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".JourneyActivity"></activity>
+        <activity android:name=".JourneyActivity" />
+        <activity
+            android:name=".JourneyDetailsActivity"
+            android:parentActivityName=".JourneyActivity">
+
+            <!-- The meta-data tag required for support of API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".JourneyActivity" />
+        </activity>
     </application>
 
 </manifest>
