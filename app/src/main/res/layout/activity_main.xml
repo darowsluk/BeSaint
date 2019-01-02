@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_txtProjectName"
-        app:srcCompat="@drawable/load_saints" />
+        app:srcCompat="@drawable/res_img_loadsaints" />
 
     <TextView
         android:id="@+id/id_txtProjectName"

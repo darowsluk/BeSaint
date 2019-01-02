@@ -12,4 +12,8 @@
     <string name="res_txtSignDescription2">Please, share with us your first name to make the experience more enjoyable. We value your privacy. All personal data is stored on your device and stays offline.</string>
     <string name="res_txtNameHint">Enter your real name</string>
     <string name="res_btnOK">OK</string>
+    <string name="res_txtJourneyDescription">Welcome Lukasz</string>
+    <string name="res_txtImageSaintsJordan">Picture of Father Jordan among saints</string>
+    <string name="res_txtJordanName">Select your guide and start a journey!</string>
+    <string name="res_txtPlaceholder" translatable="false">Placeholder...</string>
 </resources>

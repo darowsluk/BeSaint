@@ -12,4 +12,7 @@
     <string name="res_txtSignDescription2">Prosimy podać swoje imię dla przyjemniejszego korzystania z aplikacji. Cenimy Twoją prywatność. Wszystkie osobiste dane są przechowywane tylko w telefonie.</string>
     <string name="res_txtNameHint">Podaj swoje prawdziwe imię</string>
     <string name="res_btnOK">OK</string>
+    <string name="res_txtJourneyDescription">Witaj Łukaszu</string>
+    <string name="res_txtJordanName">Wybierz przewodnika i rozpocznij podróż!</string>
+    <string name="res_txtImageSaintsJordan">Zdjęcie ojca Jordana pomiędzy świętymi</string>
 </resources>
