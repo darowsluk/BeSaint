@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.util.SparseArray;
 import android.widget.ExpandableListView;
 
-import java.lang.reflect.Field;
-
 public class JourneyActivity extends AppCompatActivity {
 
     SparseArray<Group> groups = new SparseArray<Group>();

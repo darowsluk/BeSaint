@@ -16,6 +16,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
 
     public static final String PARAM1 = "org.sds.besaint.PARAM1";
     public static final String PARAM2 = "org.sds.besaint.PARAM2";
+    public static final String PARAM3 = "org.sds.besaint.PARAM3";
     private final SparseArray<Group> groups;
     public LayoutInflater inflater;
     public Activity activity;
@@ -58,6 +59,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
                 Intent intent = new Intent(v.getContext(), JourneyDetailsActivity.class);
                 intent.putExtra(PARAM1, groupPosition);
                 intent.putExtra(PARAM2, childPosition);
+                intent.putExtra(PARAM3, children);
                 v.getContext().startActivity(intent);
             }
         });

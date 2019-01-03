@@ -17,4 +17,11 @@
     <string name="res_txtJourneySubtitle">Select your guide and start a journey!</string>
     <string name="res_txtPlaceholder" translatable="false">Placeholder...</string>
     <string name="res_txtJordanDescription">Image of Father Francis Jordan</string>
+    <string name="res_tabLeft">Inspiration</string>
+    <string name="res_tabCenter">Plan</string>
+    <string name="res_tabRight">Progress</string>
+    <string name="res_txtImageSaint">Image of a saint</string>
+    <string name="res_txtCheckResolution">Your resolution for today</string>
+    <string name="res_txtFinishSwitch">Finished Day</string>
+    <string name="res_txtResolution">Your resolution</string>
 </resources>

@@ -15,5 +15,12 @@
     <string name="res_txtJourneyTitle">Witaj Łukaszu</string>
     <string name="res_txtJourneySubtitle">Wybierz przewodnika i rozpocznij podróż!</string>
     <string name="res_txtImageSaintsJordan">Zdjęcie ojca Jordana pomiędzy świętymi</string>
-    <string name="res_txtJordanDescription">Image of Father Francis Jordan</string>
+    <string name="res_txtJordanDescription">Zdjęcie Ojca Franciszka Jordana</string>
+    <string name="res_tabLeft">Inspiracja</string>
+    <string name="res_tabCenter">Plan</string>
+    <string name="res_tabRight">Postęp</string>
+    <string name="res_txtImageSaint">Zdjęcie świętego</string>
+    <string name="res_txtCheckResolution">Twoje postanowienie na dziś</string>
+    <string name="res_txtFinishSwitch">Zakończ dzień</string>
+    <string name="res_txtResolution" >Twoje postanowienie</string>
 </resources>
