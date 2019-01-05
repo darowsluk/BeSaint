@@ -24,4 +24,26 @@
     <string name="res_txtCheckResolution">Your resolution for today</string>
     <string name="res_txtFinishSwitch">Finished Day</string>
     <string name="res_txtResolution">Your resolution</string>
+    <string name="res_txtHistoryMenu">History</string>
+    <string name="res_txtAboutMenu">About</string>
+    <string name="res_txtStopMenu">Stop</string>
+    <string name="res_txtSettingsMenu">Settings</string>
+    <string name="res_txtProfileMenu">Profile</string>
+    <string name="res_txtRunningMenu">Active</string>
+    <string name="res_txtVersion">VERSION 0.1</string>
+    <string name="res_txtMission"><u>Mission Statement</u></string>
+    <string name="res_txtLicence"><u>End User Licence Agreement</u></string>
+    <string name="res_txtPrivacy"><u>Privacy Statement</u></string>
+    <string name="res_txtNightMode">Night mode</string>
+    <string name="res_txtEnabled">enabled</string>
+    <string name="res_txtDisabled">disabled</string>
+    <string name="res_txtProgressMode">Progress Mode (1 week)</string>
+    <string name="res_txtActiveJourney">Active Journey</string>
+    <string name="res_txtActiveJourneyTitle">Four pillars of holiness</string>
+    <string name="res_txtJordan">Father Francis Jordan</string>
+    <string name="res_txtDay">Day 1/4</string>
+    <string name="res_txtRecommendedJourney">Next Recommended Journey</string>
+    <string name="res_txtRecommendedJourneyTitle">Exhortations and admonitions</string>
+    <string name="res_txtDay2">Day 0/30</string>
+    <string name="res_txtHistoryJourneys">History of your Journeys</string>
 </resources>

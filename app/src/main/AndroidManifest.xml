@@ -36,6 +36,30 @@
                 android:value=".JourneyActivity" />
         </activity>
         <activity android:name=".RunningActivity" />
+        <activity android:name=".HistoryActivity"
+            android:parentActivityName=".RunningActivity">
+
+            <!-- The meta-data tag required for support of API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".RunningActivity" />
+        </activity>
+        <activity android:name=".SettingsActivity"
+            android:parentActivityName=".RunningActivity">
+
+            <!-- The meta-data tag required for support of API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".RunningActivity" />
+        </activity>
+        <activity android:name=".AboutActivity"
+            android:parentActivityName=".RunningActivity">
+
+            <!-- The meta-data tag required for support of API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".RunningActivity" />
+        </activity>
     </application>
 
 </manifest>

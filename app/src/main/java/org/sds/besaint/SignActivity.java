@@ -13,6 +13,7 @@ public class SignActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign);
     }
 
+    // TODO: Check parent - if selected from options menu return to running activity
     public void onOKClick(View view) {
         Intent intent = new Intent(this, JourneyActivity.class);
         startActivity(intent);
