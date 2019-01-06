@@ -1,16 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="android:Theme.Material.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="EcclesialTheme" parent="Theme.AppCompat.Light" >
+    <style name="EcclesialTheme" parent="Theme.AppCompat.Light">
         <item name="android:colorBackground">@color/background_material_light</item>
+        <item name="android:colorPrimary">@color/primary_material_light</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark_material_light</item>
+        <item name="android:colorAccent">@color/accent_material_light</item>
         <item name="android:textColorPrimary">@color/text_color_primary</item>
     </style>
-
 </resources>

@@ -34,8 +34,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="0077ff" />
-                                      <entry key="foregroundImage" value="C:\MyDevelopment\BeSaint\app\src\main\res\drawable\louncher_logo1.png" />
+                                      <entry key="backgroundColor" value="efebe9" />
+                                      <entry key="foregroundImage" value="C:\MyDevelopment\BeSaint\app\src\main\res\drawable\launcher_logo.png" />
                                     </map>
                                   </option>
                                 </PersistentState>

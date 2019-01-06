@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/EcclesialTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,26 +19,31 @@
         </activity>
         <activity
             android:name=".SignActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/EcclesialTheme">
 
             <!-- The meta-data tag required for support of API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".JourneyActivity" />
+        <activity android:name=".JourneyActivity"
+            android:theme="@style/EcclesialTheme" />
         <activity
             android:name=".JourneyDetailsActivity"
-            android:parentActivityName=".JourneyActivity">
+            android:parentActivityName=".JourneyActivity"
+            android:theme="@style/EcclesialTheme">
 
             <!-- The meta-data tag required for support of API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".JourneyActivity" />
         </activity>
-        <activity android:name=".RunningActivity" />
+        <activity android:name=".RunningActivity"
+            android:theme="@style/EcclesialTheme" />
         <activity android:name=".HistoryActivity"
-            android:parentActivityName=".RunningActivity">
+            android:parentActivityName=".RunningActivity"
+            android:theme="@style/EcclesialTheme">
 
             <!-- The meta-data tag required for support of API level 15 and lower -->
             <meta-data
@@ -45,7 +51,8 @@
                 android:value=".RunningActivity" />
         </activity>
         <activity android:name=".SettingsActivity"
-            android:parentActivityName=".RunningActivity">
+            android:parentActivityName=".RunningActivity"
+            android:theme="@style/EcclesialTheme">
 
             <!-- The meta-data tag required for support of API level 15 and lower -->
             <meta-data
@@ -53,7 +60,8 @@
                 android:value=".RunningActivity" />
         </activity>
         <activity android:name=".AboutActivity"
-            android:parentActivityName=".RunningActivity">
+            android:parentActivityName=".RunningActivity"
+            android:theme="@style/EcclesialTheme">
 
             <!-- The meta-data tag required for support of API level 15 and lower -->
             <meta-data
