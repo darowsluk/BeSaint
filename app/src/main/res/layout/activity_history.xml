@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistoryActivity">
+
+    <TextView
+        android:id="@+id/id_txtActiveJourney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/res_txtActiveJourney"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_txtActiveJourneyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/res_txtActiveJourneyTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_txtActiveJourney" />
+
+    <TextView
+        android:id="@+id/id_txtRecommendedJourneyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/res_txtRecommendedJourneyTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_txtRecommendedJourney" />
+
+    <TextView
+        android:id="@+id/id_txtTitleSaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/res_txtJordan"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toStartOf="@+id/id_txtActiveJourneyTitle"
+        app:layout_constraintTop_toBottomOf="@+id/id_txtActiveJourneyTitle" />
+
+    <TextView
+        android:id="@+id/id_txtTitleSaint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/res_txtJordan"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toStartOf="@+id/id_txtRecommendedJourneyTitle"
+        app:layout_constraintTop_toBottomOf="@+id/id_txtRecommendedJourneyTitle" />
+
+    <TextView
+        android:id="@+id/id_txtDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:text="@string/res_txtDay"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toStartOf="@+id/id_txtTitleSaint"
+        app:layout_constraintTop_toBottomOf="@+id/id_txtTitleSaint" />
+
+    <TextView
+        android:id="@+id/id_txtDay2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:text="@string/res_txtDay2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toStartOf="@+id/id_txtTitleSaint2"
+        app:layout_constraintTop_toBottomOf="@+id/id_txtTitleSaint2" />
+
+    <TextView
+        android:id="@+id/id_txtRecommendedJourney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/res_txtRecommendedJourney"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_txtDay" />
+
+    <TextView
+        android:id="@+id/id_txtHistoryJourneys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/res_txtHistoryJourneys"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_txtDay2" />
+</android.support.constraint.ConstraintLayout>
