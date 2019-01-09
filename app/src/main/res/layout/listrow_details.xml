@@ -27,6 +27,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <View
+        android:id="@+id/id_imgView"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorPrimaryDark" />

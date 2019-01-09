@@ -14,7 +14,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartClick(View view) {
-        Intent intent = new Intent(this, SignActivity.class);
+        Intent intent;
+        if (AppSingleton.getInstance().getFirstRun()) {
+            intent = new Intent(this, SignActivity.class);
+            AppSingleton.getInstance().setFirstRun(false);
+        }
+        else {
+            intent = new Intent(this, JourneyActivity.class);
+        }
         startActivity(intent);
     }
 }
