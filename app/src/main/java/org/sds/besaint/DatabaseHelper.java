@@ -36,6 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.getReadableDatabase();
     }
 
+    // Get global instance of singleton class
     public static synchronized DatabaseHelper getInstance(Context context) {
         if (ourInstance == null) {
             ourInstance = new DatabaseHelper(context);

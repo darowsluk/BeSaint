@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-import static org.sds.besaint.CustomPagerAdapter.BIG_SCALE;
+import static org.sds.besaint.JourneyVPAdapter.BIG_SCALE;
 
 public class CustomLinearLayout extends LinearLayout {
     private float mScale = BIG_SCALE;

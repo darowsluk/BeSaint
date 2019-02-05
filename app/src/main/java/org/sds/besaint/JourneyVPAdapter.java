@@ -10,7 +10,7 @@ import android.view.View;
 import static org.sds.besaint.JourneyActivity.FIRST_PAGE;
 import static org.sds.besaint.JourneyActivity.PAGES;
 
-public class CustomPagerAdapter extends FragmentPagerAdapter implements ViewPager.PageTransformer {
+public class JourneyVPAdapter extends FragmentPagerAdapter implements ViewPager.PageTransformer {
     public final static float BIG_SCALE = 1.0f;
     public final static float SMALL_SCALE = 0.5f;
     public final static float DIFF_SCALE = BIG_SCALE - SMALL_SCALE;
@@ -20,7 +20,7 @@ public class CustomPagerAdapter extends FragmentPagerAdapter implements ViewPage
     private FragmentManager mFragmentManager;
     private float mScale;
 
-    public CustomPagerAdapter(Activity context, FragmentManager fragmentManager) {
+    public JourneyVPAdapter(Activity context, FragmentManager fragmentManager) {
         super(fragmentManager);
         this.mFragmentManager = fragmentManager;
         this.mContext = context;
@@ -34,7 +34,7 @@ public class CustomPagerAdapter extends FragmentPagerAdapter implements ViewPage
         else
             mScale = SMALL_SCALE;
 
-        return CustomFragment.newInstance(mContext, position, mScale);
+        return JourneyVPFragment.newInstance(mContext, position, mScale);
     }
 
     @Override
