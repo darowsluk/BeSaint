@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class SignActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +15,7 @@ public class SignActivity extends AppCompatActivity {
 
     // TODO: Check parent - if selected from options menu return to running activity
     public void onOKClick(View view) {
-        Intent intent = new Intent(this, JourneyActivity.class);
+        Intent intent = new Intent(this, RunningActivity.class);
         startActivity(intent);
     }
 }

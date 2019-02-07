@@ -38,7 +38,7 @@
     <string name="res_txtDisabled">disabled</string>
     <string name="res_txtProgressMode">Progress Mode (1 week)</string>
     <string name="res_txtActiveJourney">Active Journey</string>
-    <string name="res_txtActiveJourneyTitle">Four pillars of holiness</string>
+    <string name="res_txtActiveJourneyTitle">Tytuł podróży</string>
     <string name="res_txtJordan">Father Francis Jordan</string>
     <string name="res_txtDay">Day 1/4</string>
     <string name="res_txtRecommendedJourney">Next Recommended Journey</string>
@@ -46,4 +46,11 @@
     <string name="res_txtDay2">Day 0/30</string>
     <string name="res_txtHistoryJourneys">History of your Journeys</string>
     <string name="txtTitle">Jan Paweł II</string>
+    <string name="nav_open_drawer">Otwórz navigację</string>
+    <string name="nav_close_drawer">Zamknij nawigację</string>
+    <string name="nav_history">Historia</string>
+    <string name="nav_about">Informacje</string>
+    <string name="nav_help">Pomoc</string>
+    <string name="nav_profile">Profil</string>
+    <string name="nav_settings">Ustawienia</string>
 </resources>

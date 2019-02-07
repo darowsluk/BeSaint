@@ -4,56 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/id_journeyCardView"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="132dp"
+    android:layout_marginBottom="8dp"
+    android:requiresFadingEdge="horizontal|vertical"
+    app:cardBackgroundColor="@color/colorCardBackground"
     app:cardCornerRadius="8dp"
     app:contentPadding="8dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/res_shape_border">
 
         <ImageView
             android:id="@+id/id_cardImageView"
             android:layout_width="80dp"
             android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/res_img_intro80" />
+            app:srcCompat="@drawable/res_img_intro80"
+            android:contentDescription="@string/res_txtPlaceholder" />
 
         <TextView
             android:id="@+id/id_cardJourneyTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/res_txtActiveJourneyTitle"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/id_cardImageView"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/id_cardJourneyLevel"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/res_txtPlaceholder"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:fontFamily="sans-serif-smallcaps"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/id_cardJourneyDays"
+            app:layout_constraintStart_toEndOf="@+id/id_cardImageView" />
+
+        <TextView
+            android:id="@+id/id_cardJourneyAuthor"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/res_txtPlaceholder"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/id_cardImageView"
             app:layout_constraintTop_toBottomOf="@+id/id_cardJourneyTitle" />
-
-        <TextView
-            android:id="@+id/id_cardJourneyAuthor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            app:layout_constraintStart_toEndOf="@+id/id_cardImageView"
-            app:layout_constraintTop_toBottomOf="@+id/id_cardJourneyLevel" />
 
         <TextView
             android:id="@+id/id_cardJourneyDays"
@@ -61,7 +81,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="TextView"
+            android:layout_marginBottom="8dp"
+            android:text="@string/res_txtPlaceholder"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </android.support.constraint.ConstraintLayout>
