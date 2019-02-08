@@ -35,6 +35,9 @@ public class LeftFragment extends Fragment {
         if (view != null) {
             MarkdownView markdownView = (MarkdownView) view.findViewById(R.id.id_leftFragment_markdownView);
 
+            // Find day in the DB
+
+
             markdownView.loadMarkdown("##John 1:1 Na początku było Słowo, a Słowo było u Boga, i Bogiem było Słowo.\n" +
                     " 2 Ono było na początku u Boga.\n" +
                     " 3 Wszystko przez Nie się stało, a bez Niego nic się nie stało, co się stało.\n" +
