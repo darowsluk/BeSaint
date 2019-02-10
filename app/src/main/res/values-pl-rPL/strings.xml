@@ -8,7 +8,7 @@
     <string name="res_btnStart">START</string>
     <string name="res_txtSignHeader" >Podpisz się</string>
     <string name="res_txtName">Imię</string>
-    <string name="res_txtSignDescription">Witamy w aplikacji BeSaint.</string>
+    <string name="res_txtInspirationDefault">### Witamy w aplikacji BeSaint\\n##### Swiętość jest dla każdego</string>
     <string name="res_txtSignDescription2">Prosimy podać swoje imię dla przyjemniejszego korzystania z aplikacji. Cenimy Twoją prywatność. Wszystkie osobiste dane są przechowywane tylko w telefonie.</string>
     <string name="res_txtNameHint">Podaj swoje prawdziwe imię</string>
     <string name="res_btnOK">OK</string>

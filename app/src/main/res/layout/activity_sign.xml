@@ -32,7 +32,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:gravity="center_horizontal"
-        android:text="@string/res_txtSignDescription"
+        android:text="@string/res_txtInspirationDefault"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
