@@ -1,10 +1,12 @@
 package org.sds.besaint;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v4.content.ContextCompat;
 import android.util.SparseArray;
 import android.widget.Toast;
 
@@ -14,6 +16,111 @@ import java.io.IOException;
 public class DataProvider {
 
     // Methods
+    public void updateBesaintData(Context context, int journeyUID, int currentDay) {
+        // Save data to DB
+        SQLiteDatabase dB = getDB(context);
+        if (dB.getVersion() >= 1) {
+            ContentValues values = new ContentValues();
+            values.put("journey_UID", journeyUID);
+            values.put("currentDay", currentDay);
+            String where = "_ID=1";
+            try{
+                dB.update("besaint_data", values, where, null);
+            }
+            catch (Exception e){
+                String error =  e.getMessage().toString();
+            }
+        }
+    }
+
+    public DataJourney getCurrentJourney(Context context) {
+        Cursor c1, c2;
+        int journeyUID;
+        DataJourney journey = new DataJourney();
+
+        // Load data from DB
+        SQLiteDatabase dB = getDB(context);
+        if (dB.getVersion() >= 1) {
+            c1 = dB.query ("besaint_data",
+                    new String[] {"journey_UID", "currentDay"},
+                    "_ID = 1", null,
+                    null, null, null);
+            if (!c1.moveToFirst()) {
+                // No entry found - provide default
+                // TODO: THROW EXCEPTION
+                //journeyUID = 0;
+                return null;
+            }
+            else {
+                journeyUID =c1.getInt(0);
+            }
+
+            c2 = dB.query ("journey",
+                    new String[] {"journey_UID", "saint_ID", "title", "level", "author", "days", "description", "image"},
+                    "journey_UID = ?",
+                    new String[] {Integer.toString(journeyUID)},
+                    null, null, null);
+            if (!c2.moveToFirst()) {
+                // No entry found - provide default
+                // TODO: THROW EXCEPTION
+                journey = null;
+            }
+            else {
+                journey.setJourneyUID(c2.getInt(0));
+                journey.setId(c2.getInt(1));
+                journey.setTitle(c2.getString(2));
+                journey.setLevel(c2.getInt(3));
+                journey.setAuthor(c2.getString(4));
+                journey.setDays(c2.getInt(5));
+                journey.setDescription(c2.getString(6));
+                journey.setImage(c2.getBlob(7));
+            }
+        }
+        return journey;
+    }
+
+    public DataDay getCurrentDay(Context context) {
+        Cursor c1, c2;
+        int journeyUID, currentDay;
+        DataDay dataDay = new DataDay();
+
+        // Load data from DB
+        SQLiteDatabase dB = getDB(context);
+        if (dB.getVersion() >= 1) {
+            c1 = dB.query ("besaint_data",
+                    new String[] {"journey_UID", "currentDay"},
+                    "_ID = 1", null,
+                    null, null, null);
+            if (!c1.moveToFirst()) {
+                // No entry found - provide default
+                // TODO: THROW EXCEPTION
+                return null;
+            }
+            else {
+                journeyUID =c1.getInt(0);
+                currentDay = c1.getInt(1);
+            }
+
+            c2 = dB.query ("day",
+                    new String[] {"journey_UID", "title", "day", "inspiration"},
+                    "journey_UID = ? AND day = ?",
+                    new String[] {Integer.toString(journeyUID), Integer.toString(currentDay)},
+                    null, null, null);
+            if (!c2.moveToFirst()) {
+                // No entry found - provide default
+                // TODO: THROW EXCEPTION
+                dataDay = null;
+            }
+            else {
+                dataDay.setJourneyId(c2.getInt(0));
+                dataDay.setTitle(c2.getString(1));
+                dataDay.setDay(c2.getString(2));
+                dataDay.setInspiration(c2.getString(3));
+            }
+        }
+        return dataDay;
+    }
+
     public DataJourney getDataJourney(Context context, int journeyUID) {
         Cursor c;
         String q;

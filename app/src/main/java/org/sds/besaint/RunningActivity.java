@@ -19,6 +19,8 @@ import android.view.View;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
+import com.facebook.stetho.Stetho;
+
 import us.feras.mdv.MarkdownView;
 
 
@@ -28,6 +30,9 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_running);
+
+        // This line initializes Stetho for viewing sqlite database in chrome browser (http://facebook.github.io/stetho/)
+        Stetho.initializeWithDefaults(this);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.id_ViewPager);
         MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());

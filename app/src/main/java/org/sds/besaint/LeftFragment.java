@@ -16,6 +16,8 @@ import us.feras.mdv.MarkdownView;
  */
 public class LeftFragment extends Fragment {
 
+    private DataProvider mDataProvider;
+    private DataJourney mJourney;
 
     public LeftFragment() {
         // Required empty public constructor
@@ -25,6 +27,7 @@ public class LeftFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        mDataProvider = new DataProvider();
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_left, container, false);
     }
@@ -32,16 +35,27 @@ public class LeftFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        String htmlText;
         View view = getView();
         if (view != null) {
-//            MarkdownView markdownView = (MarkdownView) view.findViewById(R.id.id_leftFragment_markdownView);
-//            // Find day in the DB
-//            String txtDefault = getResources().getString(R.string.res_txtInspirationDefault);
-//            markdownView.loadMarkdown(txtDefault);
+            // Get data from DB
+            mJourney = mDataProvider.getCurrentJourney(getActivity());
+            if (mJourney == null) {
+                htmlText = getResources().getString(R.string.res_txtInspirationDefault);
+            }
+            else {
+                DataDay dataDay = mDataProvider.getCurrentDay(getActivity());
+                if (dataDay == null) {
+                    // Day not implemented in DB, so revert to default
+                    htmlText = getResources().getString(R.string.res_txtInspirationDefault);
+                }
+                else {
+                    htmlText = dataDay.getInspiration();
+                }
+            }
 
             WebView webview = (WebView) view.findViewById(R.id.id_htmlInspirationView);
             webview.setBackgroundColor(0); // This line makes the background transparent
-            String htmlText = getResources().getString(R.string.res_txtInspirationDefault);;
             webview.loadData(htmlText , "text/html; charset=UTF-8", null);
         }
     }

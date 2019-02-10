@@ -17,8 +17,9 @@ public class JourneyDetailsActivity extends AppCompatActivity {
     public static final String EXTRA_JOURNEY_UID = "journey_UID";
     //public static final String EXTRA_SAINT_NAME = "saint_NAME";
 
-    private DatabaseHelper mDBHelper;
-    private SQLiteDatabase mDb;
+    private DataProvider mDataProvider;
+    private DataJourney mJourney;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +31,8 @@ public class JourneyDetailsActivity extends AppCompatActivity {
         int journeyUID = intent.getIntExtra(EXTRA_JOURNEY_UID, 0);
 
 
-        DataProvider dataProvider = new DataProvider();
-        DataJourney mJourney = dataProvider.getDataJourney(this, journeyUID);
+        mDataProvider = new DataProvider();
+        mJourney = mDataProvider.getDataJourney(this, journeyUID);
         byte[] image = mJourney.getImage();
         if (image != null) {
             Drawable drawable = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(image, 0, image.length));
@@ -49,6 +50,10 @@ public class JourneyDetailsActivity extends AppCompatActivity {
     }
 
     public void onStartClick(View view) {
+        // Save current journey UID and day 1 to DB
+        // TODO: implement history here
+        mDataProvider.updateBesaintData(this, mJourney.getJourneyUID(), 1);
+
         Intent intent = new Intent(this, RunningActivity.class);
         startActivity(intent);
     }
