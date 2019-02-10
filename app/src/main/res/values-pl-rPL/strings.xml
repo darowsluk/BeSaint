@@ -2,13 +2,21 @@
 <resources>
     <string name="res_txtProjectName">Projekt BeSaint</string>
     <string name="res_txtImageSaints">Zdjęcia trzech świętych</string>
-    <string name="res_txtDescription1">Świętość jest dla każdego.</string>
-    <string name="res_txtDescription2">Ucz się od świętych</string>
-    <string name="res_txtDescription3">i rozpocznij swoją własną podróż!</string>
     <string name="res_btnStart">START</string>
     <string name="res_txtSignHeader" >Podpisz się</string>
     <string name="res_txtName">Imię</string>
-    <string name="res_txtInspirationDefault">### Witamy w aplikacji BeSaint\\n##### Swiętość jest dla każdego</string>
+    <string name="res_txtInspirationDefault"><![CDATA[<html><body>
+<center>
+<h1>Witamy w aplikacji BeSaint</h1>
+<h2>Rozwój duchowy jest dla każdego</h2>
+<h3>Ucz się od świętych i rozpocznij swoją własną podróż!</h3>
+</center>
+<p>Każda podróż zawiera serię dni, które poprowadzą Cię za pomocą tekstu inspiracji, planu wzrostu oraz aktualnego stanu postępu.</p>
+<p>Codziennie przeczytaj tekst inspiracji, zrób określone zadanie według planu dnia i sprawdź jak Ci idzie w oknie postępu.</p>
+<p>Rozpocznij naciskając czerony guzik i wybierz swoją podróż z listy możliwości!</p>
+<p> </p>
+<p> </p>
+</body></html>]]></string>
     <string name="res_txtSignDescription2">Prosimy podać swoje imię dla przyjemniejszego korzystania z aplikacji. Cenimy Twoją prywatność. Wszystkie osobiste dane są przechowywane tylko w telefonie.</string>
     <string name="res_txtNameHint">Podaj swoje prawdziwe imię</string>
     <string name="res_btnOK">OK</string>

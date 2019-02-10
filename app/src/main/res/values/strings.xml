@@ -2,13 +2,19 @@
     <string name="app_name" translatable="false">BeSaint</string>
     <string name="res_txtProjectName">BeSaint Project</string>
     <string name="res_txtImageSaints">Picture of three saints</string>
-    <string name="res_txtDescription1">Spiritual growth is for everyone.</string>
-    <string name="res_txtDescription2">Learn from the saints</string>
-    <string name="res_txtDescription3">and start your own journey!</string>
     <string name="res_btnStart">START</string>
     <string name="res_txtSignHeader">Sign</string>
     <string name="res_txtName">Name</string>
-    <string name="res_txtInspirationDefault">## Welcome to the BeSaint app\n### Spiritual growth is for everyone\n####Learn from the saints and start your own journey!\n---\nEach journey consists of particular days, which will guide you by means of an inspiration, plan of growth and current progress visualized by the above tabs.\nRead the inspiration for the day, perform tasks in the plan and check up on your progress.\nBegin by pressing the red button and choose your journey from the list!</string>
+    <string name="res_txtInspirationDefault"><![CDATA[<html><body>
+<center>
+<h1>Welcome to the BeSaint App</h1>
+<h2>Spiritual growth is for everyone</h2>
+<h3>Learn from the saints and start your own journey!</h3>
+</center>
+<p>Each journey consists of particular days, which will guide you by means of an inspiration, plan of growth and current progress visualized by the above tabs.</p>
+<p>Read the inspiration for the day, perform tasks in the plan and check up on your progress.</p>
+<p>Begin by pressing the red button and choose your journey from the list!</p><p> </p><p> </p>
+</body></html>]]></string>
     <string name="res_txtSignDescription2">Please, share with us your first name to make the experience more enjoyable. We value your privacy. All personal data is stored on your device and stays offline.</string>
     <string name="res_txtNameHint">Enter your real name</string>
     <string name="res_btnOK">OK</string>
@@ -48,7 +54,6 @@
     <string name="txtTitle">Jan Paweł II</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="nav_open_drawer">Open navigation drawer</string>
     <string name="nav_close_drawer">Close navigation drawer</string>
     <string name="nav_history">History</string>

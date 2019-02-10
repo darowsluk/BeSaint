@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 import us.feras.mdv.MarkdownView;
 
@@ -33,12 +34,15 @@ public class LeftFragment extends Fragment {
         super.onStart();
         View view = getView();
         if (view != null) {
-            MarkdownView markdownView = (MarkdownView) view.findViewById(R.id.id_leftFragment_markdownView);
+//            MarkdownView markdownView = (MarkdownView) view.findViewById(R.id.id_leftFragment_markdownView);
+//            // Find day in the DB
+//            String txtDefault = getResources().getString(R.string.res_txtInspirationDefault);
+//            markdownView.loadMarkdown(txtDefault);
 
-            // Find day in the DB
-            String txtDefault = getResources().getString(R.string.res_txtInspirationDefault);
-
-            markdownView.loadMarkdown(txtDefault);
+            WebView webview = (WebView) view.findViewById(R.id.id_htmlInspirationView);
+            webview.setBackgroundColor(0); // This line makes the background transparent
+            String htmlText = getResources().getString(R.string.res_txtInspirationDefault);;
+            webview.loadData(htmlText , "text/html; charset=UTF-8", null);
         }
     }
 }
