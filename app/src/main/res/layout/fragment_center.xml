@@ -28,7 +28,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="64dp"
         android:switchPadding="10dp"
         android:text="@string/res_txtFinishSwitch"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"

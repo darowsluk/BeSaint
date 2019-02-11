@@ -1,12 +1,17 @@
 package org.sds.besaint;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class MyPagerAdapter extends FragmentStatePagerAdapter {
-    public MyPagerAdapter(FragmentManager fm) {
+
+    private Context mContext;
+
+    public MyPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
+        mContext = context;
     }
 
     @Override
@@ -31,11 +36,11 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "Inspiration";
+                return mContext.getResources().getString(R.string.res_tabLeft);
             case 1:
-                return "Plan";
+                return mContext.getResources().getString(R.string.res_tabCenter);
             case 2:
-                return "Progress";
+                return mContext.getResources().getString(R.string.res_tabRight);
             default:
                 return null;
         }
