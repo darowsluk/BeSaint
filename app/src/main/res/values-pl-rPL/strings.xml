@@ -28,7 +28,7 @@
     <string name="res_tabCenter">Plan</string>
     <string name="res_tabRight">Postęp</string>
     <string name="res_txtImageSaint">Zdjęcie świętego</string>
-    <string name="res_txtCheckResolution">Twoje postanowienie na dziś</string>
+    <string name="res_txtCheckResolution">Zrealizowałem moje postanowienie na dziś</string>
     <string name="res_txtFinishSwitch">Zakończ dzień</string>
     <string name="res_txtResolution" >Twoje postanowienie</string>
     <string name="res_txtHistoryMenu">Historia</string>
@@ -61,4 +61,7 @@
     <string name="nav_help">Pomoc</string>
     <string name="nav_profile">Profil</string>
     <string name="nav_settings">Ustawienia</string>
+    <string name="res_txtDayResolution">"Zaplanowane postanowienie na dzień "</string>
+    <string name="res_txtDayResolutionDefault">Nie ma postanowienia na dziś</string>
+    <string name="res_txtFinishButton">FINISH</string>
 </resources>

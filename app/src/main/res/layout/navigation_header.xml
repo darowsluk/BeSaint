@@ -1,24 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="20dp"
-    android:theme="@style/EcclesialTheme" >
-    <LinearLayout
-        android:layout_width="wrap_content"
+    android:layout_height="132dp"
+    android:theme="@style/EcclesialTheme">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/id_navHeaderConstraintsLayout"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="bottom|start"
-        android:layout_margin="16dp" >
+        android:layout_margin="8dp"
+        android:gravity="bottom|start">
 
         <TextView
             android:id="@+id/id_navTextTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/res_txtActiveJourneyTitle"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_navImageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
+            android:id="@+id/id_navTextAuthor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/res_txtPlaceholder"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_navImageView"
+            app:layout_constraintTop_toBottomOf="@+id/id_navTextTitle" />
+
+        <ImageView
+            android:id="@+id/id_navImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/res_txtPlaceholder" />
-    </LinearLayout>
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/res_img_intro80" />
+
+        <TextView
+            android:id="@+id/id_navTextLevel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/res_txtPlaceholder"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textSize="10sp"
+            app:fontFamily="sans-serif-smallcaps"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/id_navTextDays"
+            app:layout_constraintStart_toEndOf="@+id/id_navImageView" />
+
+        <TextView
+            android:id="@+id/id_navTextDays"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/res_txtPlaceholder"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 </FrameLayout>
