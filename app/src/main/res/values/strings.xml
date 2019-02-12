@@ -65,4 +65,5 @@
     <string name="res_txtDayResolution">Planned resolution for day</string>
     <string name="res_txtDayResolutionDefault">No resolution for today</string>
     <string name="res_txtFinishButton">FINISH</string>
+    <string name="res_txtToastFinishedDay">Starting a new day...</string>
 </resources>

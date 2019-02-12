@@ -1,12 +1,12 @@
 package org.sds.besaint;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -108,16 +108,18 @@ public class CenterFragment extends Fragment {
             button.setOnClickListener(new Button.OnClickListener() {
                 public void onClick(View v) {
                     // Change currentDay in DB to the next day if max day is not reached and update UI
-                    Toast.makeText(getActivity(), "Finish button was clicked",
+                    Toast.makeText(getActivity(), getResources().getString(R.string.res_txtToastFinishedDay),
                             Toast.LENGTH_LONG).show();
                     if (currentDay <= maxDays) {
                         mDataProvider.updateBesaintData(getContext(), mJourney.getJourneyUID(), currentDay + 1 );
                     }
                     else {
                         // end the current journey
+                        mDataProvider.updateBesaintData(getContext(), 0, 0 );
                     }
-                    // Update UI
-
+                    // Update UI by starting a new activity and returning from it
+                    Intent intent = new Intent(getContext(), TransitionActivity.class);
+                    startActivity(intent);
                 }
             });
         }

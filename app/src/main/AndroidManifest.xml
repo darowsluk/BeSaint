@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/EcclesialTheme">
+        <activity android:name=".TransitionActivity"></activity>
         <activity
             android:name=".ProfileActivity"
             android:parentActivityName=".RunningActivity">
@@ -18,7 +19,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".RunningActivity" />
         </activity>
-        <activity android:name=".JourneyActivity"/>
+        <activity android:name=".JourneyActivity" />
         <activity
             android:name=".JourneyDetailsActivity"
             android:parentActivityName=".JourneyActivity">
@@ -35,7 +36,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HistoryActivity"
+        <activity
+            android:name=".HistoryActivity"
             android:parentActivityName=".RunningActivity">
 
             <!-- The meta-data tag required for support of API level 15 and lower -->
@@ -43,7 +45,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".RunningActivity" />
         </activity>
-        <activity android:name=".SettingsActivity"
+        <activity
+            android:name=".SettingsActivity"
             android:parentActivityName=".RunningActivity">
 
             <!-- The meta-data tag required for support of API level 15 and lower -->
@@ -51,7 +54,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".RunningActivity" />
         </activity>
-        <activity android:name=".AboutActivity"
+        <activity
+            android:name=".AboutActivity"
             android:parentActivityName=".RunningActivity">
 
             <!-- The meta-data tag required for support of API level 15 and lower -->
