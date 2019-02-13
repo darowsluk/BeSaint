@@ -66,4 +66,6 @@
     <string name="res_txtFinishButton">FINISH</string>
     <string name="res_txtToastFinishedDay">Rozpoczynamy nowy dzień...</string>
     <string name="res_txtWelcomeDefault">Witaj</string>
+    <string name="res_txtDayLabel">dzień</string>
+    <string name="nav_journey">Podróż</string>
 </resources>

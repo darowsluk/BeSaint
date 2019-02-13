@@ -99,7 +99,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
                 }
             }
         }
-        txtDisplay = "day " + currentDayText;
+        txtDisplay = getString(R.string.res_txtDayLabel) + " " + currentDayText;
         TextView saintView = (TextView) findViewById(R.id.id_runningHeaderSaint);
         saintView.setText(saintName);
         TextView titleView = (TextView) findViewById(R.id.id_runningHeaderTitle);
@@ -129,6 +129,9 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
         int id = menuItem.getItemId();
         Intent intent = null;
         switch(id) {
+            case R.id.nav_journey:
+                intent = new Intent(this, JourneyActivity.class);
+                break;
             case R.id.nav_history:
                 intent = new Intent(this, HistoryActivity.class);
                 break;
