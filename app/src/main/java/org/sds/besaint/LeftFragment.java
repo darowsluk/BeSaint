@@ -1,14 +1,13 @@
 package org.sds.besaint;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-
-import us.feras.mdv.MarkdownView;
 
 
 /**
@@ -36,15 +35,20 @@ public class LeftFragment extends Fragment {
     public void onStart() {
         super.onStart();
         String htmlText;
+        int currentJourneyUID, currentDay;
+        Context context = getContext();
         View view = getView();
+
         if (view != null) {
             // Get data from DB
-            mJourney = mDataProvider.getCurrentJourney(getActivity());
+            currentJourneyUID = mDataProvider.getSharedCurrentJourneyUID(context);
+            currentDay = mDataProvider.getSharedCurrentDay(context);
+            mJourney = mDataProvider.getDataJourney(context, currentJourneyUID);
             if (mJourney == null) {
                 htmlText = getResources().getString(R.string.res_txtInspirationDefault);
             }
             else {
-                DataDay dataDay = mDataProvider.getCurrentDay(getActivity());
+                DataDay dataDay = mDataProvider.getDataDay(context, currentJourneyUID, currentDay);
                 if (dataDay == null) {
                     // Day not implemented in DB, so revert to default
                     htmlText = getResources().getString(R.string.res_txtInspirationDefault);

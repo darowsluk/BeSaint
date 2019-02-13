@@ -5,34 +5,30 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.stetho.Stetho;
-
-import us.feras.mdv.MarkdownView;
 
 
 public class RunningActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DataProvider mDataProvider;
     private DataJourney mJourney;
+    private DataDay mDay;
+    private DataSaint mSaint;
     private byte[] mImage;
 
     @Override
@@ -61,22 +57,37 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
         NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Update image and title for the current journey in DB
-        String journeyTitle;
+        // Update image and title from the current journey in DB
+        String txtDisplay, saintName, journeyTitle, currentDayText;
         mDataProvider = new DataProvider();
-        mJourney = mDataProvider.getCurrentJourney(this);
-        if (mJourney == null) {
-            journeyTitle = "";
+
+        int currentJourneyUID, currentDay;
+        currentJourneyUID = mDataProvider.getSharedCurrentJourneyUID(this);
+        currentDay = mDataProvider.getSharedCurrentDay(this);
+
+
+        mJourney = mDataProvider.getDataJourney(this, currentJourneyUID);
+        mDay = mDataProvider.getDataDay(this, currentJourneyUID, currentDay);
+
+
+        if (mJourney == null || mDay == null) {
+            journeyTitle = DataConstants.DEFAULT_JOURNEY_TITLE;
+            saintName = DataConstants.DEFAULT_SAINT_NAME;
+            currentDayText = DataConstants.DEFAULT_DAY;
         }
         else {
-            mJourney = mDataProvider.getCurrentJourney(this);
-            if (mJourney == null) {
-                // Day not implemented in DB, so revert to default
-                journeyTitle = "";
+            mSaint = mDataProvider.getDataSaint(this, mJourney.getSaintId());
+            if (mSaint == null) {
+                // TODO: Throw exception
+                journeyTitle = DataConstants.DEFAULT_JOURNEY_TITLE;
+                saintName = DataConstants.DEFAULT_SAINT_NAME;
+                currentDayText = DataConstants.DEFAULT_DAY;
             }
             else {
                 journeyTitle = mJourney.getTitle();
-                mImage = mJourney.getImage();
+                currentDayText = mDay.getDay();
+                saintName = mSaint.getName();
+                mImage = mSaint.getImage200();
                 if (mImage != null) {
                     Drawable drawable = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(mImage, 0, mImage.length));
                     int w = (int) (drawable.getIntrinsicWidth() * getResources().getDisplayMetrics().density);
@@ -88,14 +99,28 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
                 }
             }
         }
+        txtDisplay = "day " + currentDayText;
+        TextView saintView = (TextView) findViewById(R.id.id_runningHeaderSaint);
+        saintView.setText(saintName);
         TextView titleView = (TextView) findViewById(R.id.id_runningHeaderTitle);
         titleView.setText(journeyTitle);
+        TextView dayView = (TextView) findViewById(R.id.id_runningHeaderCurrentDay);
+        dayView.setText(txtDisplay);
+
+        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.id_collapsingToolbarLayout);
+        collapsingToolbarLayout.setTitleEnabled(false);
+        //getSupportActionBar().setDisplayShowTitleEnabled(true);
+        //toolbar.setTitle("");
+        //toolbar.setSubtitle(journeyTitle);
+        //toolbar.setLogo(R.drawable.res_img_jpii48round);
+
     }
 
     public void onStartClick(View view) {
         Intent intent = new Intent(this, JourneyActivity.class);
         startActivity(intent);
     }
+
 
     // This method is called whenever an item in the drawer is clicked
     @Override
@@ -108,7 +133,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
                 intent = new Intent(this, HistoryActivity.class);
                 break;
             case R.id.nav_profile:
-                intent = new Intent(this, ProfileActivity.class);
+                intent = new Intent(this, SignActivity.class);
                 break;
             case R.id.nav_settings:
                 intent = new Intent(this, SettingsActivity.class);

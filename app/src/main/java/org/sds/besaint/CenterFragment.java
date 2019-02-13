@@ -44,27 +44,19 @@ public class CenterFragment extends Fragment {
         View view = getView();
         if (view != null) {
             // Get data from DB
-            mJourney = mDataProvider.getCurrentJourney(getActivity());
-            if (mJourney == null) {
+            int currentJourneyUID = mDataProvider.getSharedCurrentJourneyUID(getContext());
+            mJourney = mDataProvider.getDataJourney(getActivity(), currentJourneyUID);
+            if (mJourney == null || currentJourneyUID == 0) {
                 dayOfMax = getResources().getString(R.string.res_txtDayResolutionDefault);
                 currentDay = 0;
                 maxDays = 0;
             }
             else {
-                DataDay dataDay = mDataProvider.getCurrentDay(getActivity());
-                if (dataDay == null) {
-                    // Day not implemented in DB, so revert to default
-                    dayOfMax = getResources().getString(R.string.res_txtDayResolutionDefault);
-                    currentDay = 0;
-                    maxDays = 0;
-                }
-                else {
-                    currentDay = Integer.parseInt(dataDay.getDay());
-                    maxDays = mJourney.getDays();
-                    dayOfMax = getResources().getString(R.string.res_txtDayResolution) +
-                            " " + dataDay.getDay() + "/" + mJourney.getDays();
-                    showWidgets = true;
-                }
+                currentDay = mDataProvider.getSharedCurrentDay(getContext());
+                maxDays = mJourney.getDays();
+                dayOfMax = getResources().getString(R.string.res_txtDayResolution) +
+                        " " + Integer.toString(currentDay) + "/" + mJourney.getDays();
+                showWidgets = true;
             }
 
             TextView textView = (TextView) view.findViewById(R.id.id_txtDayResolution);
@@ -111,11 +103,13 @@ public class CenterFragment extends Fragment {
                     Toast.makeText(getActivity(), getResources().getString(R.string.res_txtToastFinishedDay),
                             Toast.LENGTH_LONG).show();
                     if (currentDay <= maxDays) {
-                        mDataProvider.updateBesaintData(getContext(), mJourney.getJourneyUID(), currentDay + 1 );
+
+                        mDataProvider.setSharedCurrentDay(getContext(), currentDay + 1 );
                     }
                     else {
                         // end the current journey
-                        mDataProvider.updateBesaintData(getContext(), 0, 0 );
+                        mDataProvider.setSharedCurrentDay(getContext(), DataConstants.DEFAULT_INT);
+                        mDataProvider.setSharedCurrentJourneyUID(getContext(), DataConstants.DEFAULT_INT);
                     }
                     // Update UI by starting a new activity and returning from it
                     Intent intent = new Intent(getContext(), TransitionActivity.class);

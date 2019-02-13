@@ -11,7 +11,7 @@
         android:theme="@style/EcclesialTheme">
         <activity android:name=".TransitionActivity"></activity>
         <activity
-            android:name=".ProfileActivity"
+            android:name=".SignActivity"
             android:parentActivityName=".RunningActivity">
 
             <!-- The meta-data tag required for support of API level 15 and lower -->

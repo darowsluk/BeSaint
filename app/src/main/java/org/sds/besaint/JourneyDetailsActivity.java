@@ -1,7 +1,6 @@
 package org.sds.besaint;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -50,9 +49,10 @@ public class JourneyDetailsActivity extends AppCompatActivity {
     }
 
     public void onStartClick(View view) {
-        // Save current journey UID and day 1 to DB
+        // Save current journey UID and day 1 to SharedPreferences
         // TODO: implement history here
-        mDataProvider.updateBesaintData(this, mJourney.getJourneyUID(), 1);
+        mDataProvider.setSharedCurrentJourneyUID(this, mJourney.getJourneyUID());
+        mDataProvider.setSharedCurrentDay(this, DataConstants.DEFAULT_FIRST_DAY);
 
         Intent intent = new Intent(this, RunningActivity.class);
         startActivity(intent);
