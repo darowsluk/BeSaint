@@ -41,6 +41,10 @@ public class DataJourney {
         return Level;
     }
 
+    public String getLevelString() {
+        return Integer.toString(Level);
+    }
+
     public void setLevel(int level) {
         Level = level;
     }

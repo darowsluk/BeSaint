@@ -1,5 +1,6 @@
 package org.sds.besaint;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -21,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.stetho.Stetho;
+
+import org.w3c.dom.Text;
 
 
 public class RunningActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,9 +50,56 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_mainToolbar);
         setSupportActionBar(toolbar);
 
+        mDataProvider = new DataProvider();
+
         // Add drawer toggle (Head First Android Development, p. 607)
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.nav_open_drawer, R.string.nav_close_drawer);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.nav_open_drawer, R.string.nav_close_drawer) {
+
+            @Override
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+
+                // Update welcome header with user name
+                String welcomeText = getString(R.string.res_txtWelcomeDefault) + " " + mDataProvider.getSharedUserName(getApplicationContext());
+                TextView txtDrawerWelcome = (TextView)findViewById(R.id.id_txtDrawerWelcome);
+                txtDrawerWelcome.setText(welcomeText);
+
+                // Update current journey details
+                Context context = getApplicationContext();
+                String days, level;
+                int currentJourneyUID;
+                byte[] headImage;
+
+                currentJourneyUID = mDataProvider.getSharedCurrentJourneyUID(context);
+                DataJourney dataJourney = mDataProvider.getDataJourney(context, currentJourneyUID);
+
+                TextView navTextTitle = (TextView)findViewById(R.id.id_navTextTitle);
+                navTextTitle.setText(dataJourney.getTitle());
+                TextView navTextAuthor = (TextView)findViewById(R.id.id_navTextAuthor);
+                navTextAuthor.setText(dataJourney.getAuthor());
+                TextView navTextLevel = (TextView)findViewById(R.id.id_navTextLevel);
+                level = getString(R.string.res_txtLevelLabel) + " " + dataJourney.getLevelString();
+                navTextLevel.setText(level);
+                TextView navTextDays = (TextView)findViewById(R.id.id_navTextDays);
+                days = getString(R.string.res_txtDayLabel) + " " + mDataProvider.getSharedCurrentDay(context) + "/" + dataJourney.getDays();
+                navTextDays.setText(days);
+                headImage = mJourney.getImage();
+                Drawable drawable = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(headImage, 0, headImage.length));
+                int w = (int) (drawable.getIntrinsicWidth() * getResources().getDisplayMetrics().density);
+                int h = (int) (drawable.getIntrinsicHeight() * getResources().getDisplayMetrics().density);
+                drawable.setBounds(0, 0, w, h);
+                ImageView imgView = findViewById(R.id.id_navImageView);
+//                    imgView.setImageBitmap(BitmapFactory.decodeByteArray(mImage, 0, mImage.length));
+                imgView.setImageDrawable(drawable);
+            }
+
+        };
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -59,7 +109,6 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
 
         // Update image and title from the current journey in DB
         String txtDisplay, saintName, journeyTitle, currentDayText;
-        mDataProvider = new DataProvider();
 
         int currentJourneyUID, currentDay;
         currentJourneyUID = mDataProvider.getSharedCurrentJourneyUID(this);

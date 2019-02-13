@@ -20,6 +20,14 @@ public class DataProvider {
     /////////////////////////////
     // SHARED PREFERENCES DATA //
     /////////////////////////////
+    public void setSharedUserName(Context context, String userName) {
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences(DataConstants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(DataConstants.KEY_USERNAME, userName);
+        editor.commit();
+    }
+
     public void setSharedCurrentDay(Context context, int currentDay) {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(DataConstants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
@@ -34,6 +42,11 @@ public class DataProvider {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(DataConstants.KEY_CURRENT_JOURNEY_UID, currentJourneyUID);
         editor.commit();
+    }
+
+    public String getSharedUserName(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(DataConstants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(DataConstants.KEY_USERNAME, DataConstants.DEFAULT_STRING);
     }
 
     public int getSharedCurrentDay(Context context) {

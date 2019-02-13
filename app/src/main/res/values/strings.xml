@@ -69,4 +69,5 @@
     <string name="res_txtWelcomeDefault">Welcome</string>
     <string name="res_txtDayLabel">day</string>
     <string name="nav_journey">Journey</string>
+    <string name="res_txtLevelLabel">Level</string>
 </resources>

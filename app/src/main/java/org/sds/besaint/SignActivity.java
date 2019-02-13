@@ -21,10 +21,8 @@ public class SignActivity extends AppCompatActivity {
         // Save new name to SharedPreferences as value key pair
         EditText editText = (EditText) findViewById(R.id.id_txtNameEdit);
         String userName = editText.getText().toString();
-        SharedPreferences sharedPreferences = getSharedPreferences(DataConstants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(DataConstants.KEY_USERNAME, userName);
-        editor.commit();
+        DataProvider dataProvider = new DataProvider();
+        dataProvider.setSharedUserName(getApplicationContext(), userName);
 
         Intent intent = new Intent(this, RunningActivity.class);
         startActivity(intent);
