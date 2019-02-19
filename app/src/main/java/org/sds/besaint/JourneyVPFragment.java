@@ -46,7 +46,7 @@ public class JourneyVPFragment extends Fragment {
         return linearLayout;
     }
 
-    public void updateCarPosition(int position) {
+    public void updateCardPosition(int position) {
         mCardPosition = position;
         updateCardFragmentData(position);
     }

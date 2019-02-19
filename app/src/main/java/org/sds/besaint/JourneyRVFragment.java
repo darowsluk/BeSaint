@@ -26,7 +26,7 @@ public class JourneyRVFragment extends Fragment {
 
     public JourneyRVFragment() {
         // Required empty public constructor
-        mPosition = 2; // TODO: fix this properly
+        mPosition = 1; // TODO: fix this properly
     }
 
     @Override

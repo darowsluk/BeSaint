@@ -13,7 +13,7 @@ public class JourneyActivity extends AppCompatActivity {
 
     public final static int PAGES = 5;
     public final static int VISIBLE_PAGES = 3; // always uneven (1,3,5,...)
-    public final static int FIRST_PAGE = 1  ;
+    public final static int FIRST_PAGE = 1;
 
     public JourneyVPAdapter mAdapter;
     public ViewPager mViewPager;
@@ -30,7 +30,7 @@ public class JourneyActivity extends AppCompatActivity {
         // START RecyclerView code
         // TODO: consider using getFrameManager() - a native Android class (p. 362)
         JourneyRVFragment frag = (JourneyRVFragment) getSupportFragmentManager().findFragmentById(R.id.id_journeyFragment);
-        frag.updatePosition(FIRST_PAGE);
+        frag.updatePosition(FIRST_PAGE+1);
 
         // START Carousel code
         mViewPager = findViewById(R.id.viewPager);
