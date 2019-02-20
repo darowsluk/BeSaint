@@ -2,26 +2,31 @@
     <string name="app_name" translatable="false">BeSaint</string>
     <string name="res_txtProjectName">BeSaint Project</string>
     <string name="res_txtImageSaints">Picture of three saints</string>
-    <string name="res_txtDescription1">Spiritual growth is for everyone.</string>
-    <string name="res_txtDescription2">Learn from the saints</string>
-    <string name="res_txtDescription3">and start your own journey!</string>
     <string name="res_btnStart">START</string>
     <string name="res_txtSignHeader">Sign</string>
     <string name="res_txtName">Name</string>
-    <string name="res_txtSignDescription">Welcome to the BeSaint app.</string>
+    <string name="res_txtInspirationDefault"><![CDATA[<html><body>
+<center>
+<h1>Welcome to the BeSaint App</h1>
+<h2>Spiritual growth is for everyone</h2>
+<h3>Learn from the saints and start your own journey!</h3>
+</center>
+<p>Each journey consists of particular days, which will guide you by means of an inspiration, plan of growth and current progress visualized by the above tabs.</p>
+<p>Read the inspiration for the day, perform tasks in the plan and check up on your progress.</p>
+<p>Begin by pressing the red button and choose your journey from the list!</p><p> </p><p> </p>
+</body></html>]]></string>
     <string name="res_txtSignDescription2">Please, share with us your first name to make the experience more enjoyable. We value your privacy. All personal data is stored on your device and stays offline.</string>
     <string name="res_txtNameHint">Enter your real name</string>
     <string name="res_btnOK">OK</string>
     <string name="res_txtJourneyTitle">Welcome Lukasz</string>
     <string name="res_txtImageSaintsJordan">Picture of Father Jordan among saints</string>
     <string name="res_txtJourneySubtitle">Select your guide and start a journey!</string>
-    <string name="res_txtPlaceholder" translatable="false">Placeholder...</string>
     <string name="res_txtJordanDescription">Image of Father Francis Jordan</string>
     <string name="res_tabLeft">Inspiration</string>
     <string name="res_tabCenter">Plan</string>
     <string name="res_tabRight">Progress</string>
     <string name="res_txtImageSaint">Image of a saint</string>
-    <string name="res_txtCheckResolution">Your resolution for today</string>
+    <string name="res_txtCheckResolution">I did my resolution for today</string>
     <string name="res_txtFinishSwitch">Finished Day</string>
     <string name="res_txtResolution">Your resolution</string>
     <string name="res_txtHistoryMenu">History</string>
@@ -39,11 +44,30 @@
     <string name="res_txtDisabled">disabled</string>
     <string name="res_txtProgressMode">Progress Mode (1 week)</string>
     <string name="res_txtActiveJourney">Active Journey</string>
-    <string name="res_txtActiveJourneyTitle">Four pillars of holiness</string>
+    <string name="res_txtActiveJourneyTitle">Title of the journey</string>
     <string name="res_txtJordan">Father Francis Jordan</string>
     <string name="res_txtDay">Day 1/4</string>
     <string name="res_txtRecommendedJourney">Next Recommended Journey</string>
     <string name="res_txtRecommendedJourneyTitle">Exhortations and admonitions</string>
     <string name="res_txtDay2">Day 0/30</string>
     <string name="res_txtHistoryJourneys">History of your Journeys</string>
+    <string name="txtTitle">Jan Paweł II</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="nav_open_drawer">Open navigation drawer</string>
+    <string name="nav_close_drawer">Close navigation drawer</string>
+    <string name="nav_history">History</string>
+    <string name="nav_about">About</string>
+    <string name="nav_help">Help</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_settings">Settings</string>
+    <string name="res_txtPlaceholder" translatable="false">Placeholder...</string>
+    <string name="res_txtDayResolution">Planned resolution for day</string>
+    <string name="res_txtDayResolutionDefault">No resolution for today</string>
+    <string name="res_txtFinishButton">FINISH</string>
+    <string name="res_txtToastFinishedDay">Starting a new day...</string>
+    <string name="res_txtWelcomeDefault">Welcome</string>
+    <string name="res_txtDayLabel">day</string>
+    <string name="nav_journey">Journey</string>
+    <string name="res_txtLevelLabel">Level</string>
 </resources>
