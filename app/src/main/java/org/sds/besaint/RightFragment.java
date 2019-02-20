@@ -54,9 +54,9 @@ public class RightFragment extends Fragment {
                 textPercentage = Integer.toString(intPerc) + "%";
             }
             else {
-                textHeader = "0"; // No days finished yet
+                textHeader = getResources().getString(R.string.res_txtProgressDays) + " 0";
                 textPercentage = "0%";
-                intPerc = 100;
+                intPerc = 0;
             }
 
             // Update text views
