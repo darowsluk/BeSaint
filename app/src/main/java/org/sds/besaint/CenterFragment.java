@@ -102,8 +102,12 @@ public class CenterFragment extends Fragment {
                     // Change currentDay in DB to the next day if max day is not reached and update UI
                     Toast.makeText(getActivity(), getResources().getString(R.string.res_txtToastFinishedDay),
                             Toast.LENGTH_LONG).show();
-                    if (currentDay <= maxDays) {
 
+                    // Get the value of the finished checkBox
+                    CheckBox checkBox = (CheckBox) getActivity().findViewById(R.id.id_checkboxDayResolution);
+                    boolean taskDone = checkBox.isChecked();
+
+                    if (currentDay <= maxDays) {
                         mDataProvider.setSharedCurrentDay(getContext(), currentDay + 1 );
                     }
                     else {
@@ -111,6 +115,10 @@ public class CenterFragment extends Fragment {
                         mDataProvider.setSharedCurrentDay(getContext(), DataConstants.DEFAULT_INT);
                         mDataProvider.setSharedCurrentJourneyUID(getContext(), DataConstants.DEFAULT_INT);
                     }
+
+                    // Update shared data
+                    mDataProvider.setSharedProgressDone(getContext(), taskDone);
+
                     // Update UI by starting a new activity and returning from it
                     Intent intent = new Intent(getContext(), TransitionActivity.class);
                     startActivity(intent);

@@ -20,6 +20,22 @@ public class DataProvider {
     /////////////////////////////
     // SHARED PREFERENCES DATA //
     /////////////////////////////
+
+    public void setSharedProgressDone(Context context, boolean taskDone) {
+        int totalDays, finishedDays;
+        SharedPreferences sharedPreferences = context.getSharedPreferences(DataConstants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
+        totalDays = sharedPreferences.getInt(DataConstants.KEY_PROGRESS_TOTALDAYS, DataConstants.DEFAULT_INT);
+        finishedDays = sharedPreferences.getInt(DataConstants.KEY_PROGRESS_FINISHEDDAYS, DataConstants.DEFAULT_INT);
+        if (taskDone) {
+            finishedDays++;
+        }
+        totalDays++;
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(DataConstants.KEY_PROGRESS_TOTALDAYS, totalDays);
+        editor.putInt(DataConstants.KEY_PROGRESS_FINISHEDDAYS, finishedDays);
+        editor.commit();
+    }
+
     public void setSharedUserName(Context context, String userName) {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(DataConstants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
@@ -42,6 +58,16 @@ public class DataProvider {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(DataConstants.KEY_CURRENT_JOURNEY_UID, currentJourneyUID);
         editor.commit();
+    }
+
+    public int getSharedProgressTotalDays(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(DataConstants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(DataConstants.KEY_PROGRESS_TOTALDAYS, DataConstants.DEFAULT_INT);
+    }
+
+    public int getSharedProgressFinishedDays(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(DataConstants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(DataConstants.KEY_PROGRESS_FINISHEDDAYS, DataConstants.DEFAULT_INT);
     }
 
     public String getSharedUserName(Context context) {

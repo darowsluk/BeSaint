@@ -69,4 +69,5 @@
     <string name="res_txtDayLabel">dzień</string>
     <string name="nav_journey">Podróż</string>
     <string name="res_txtLevelLabel">Poziom</string>
+    <string name="res_txtProgressDays">Zakończone zadania</string>
 </resources>

@@ -8,6 +8,8 @@ public class DataConstants {
     public static final String KEY_USERNAME = "userName";
     public static final String KEY_CURRENT_JOURNEY_UID = "currentJourneyUID";
     public static final String KEY_CURRENT_DAY = "currentDay";
+    public static final String KEY_PROGRESS_TOTALDAYS = "progressTotalDays";
+    public static final String KEY_PROGRESS_FINISHEDDAYS = "progressFinishedDays";
 
     // defaults
     public static final String DEFAULT_STRING = "";
