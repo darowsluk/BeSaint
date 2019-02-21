@@ -71,4 +71,7 @@
     <string name="nav_journey">Journey</string>
     <string name="res_txtLevelLabel">Level</string>
     <string name="res_txtProgressDays">Finished resolutions</string>
+    <string name="res_btnResetData">Reset</string>
+    <string name="res_txtResetDescription">Clear all app data</string>
+    <string name="res_txtToastResetData">All application data is cleared.</string>
 </resources>

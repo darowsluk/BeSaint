@@ -70,4 +70,7 @@
     <string name="nav_journey">Podróż</string>
     <string name="res_txtLevelLabel">Poziom</string>
     <string name="res_txtProgressDays">Zakończone zadania</string>
+    <string name="res_btnResetData">Reset</string>
+    <string name="res_txtResetDescription">Wyczyść wszystkie dane aplikacji</string>
+    <string name="res_txtToastResetData">Wszystkie dane aplikacji są wyczyszczone.</string>
 </resources>

@@ -21,6 +21,17 @@ public class DataProvider {
     // SHARED PREFERENCES DATA //
     /////////////////////////////
 
+    public void clearSharedData(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(DataConstants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(DataConstants.KEY_USERNAME, DataConstants.DEFAULT_SAINT_NAME);
+        editor.putInt(DataConstants.KEY_CURRENT_DAY, DataConstants.DEFAULT_INT);
+        editor.putInt(DataConstants.KEY_CURRENT_JOURNEY_UID, DataConstants.DEFAULT_INT);
+        editor.putInt(DataConstants.KEY_PROGRESS_TOTALDAYS, DataConstants.DEFAULT_INT);
+        editor.putInt(DataConstants.KEY_PROGRESS_FINISHEDDAYS, DataConstants.DEFAULT_INT);
+        editor.commit();
+    }
+
     public void setSharedProgressDone(Context context, boolean taskDone) {
         int totalDays, finishedDays;
         SharedPreferences sharedPreferences = context.getSharedPreferences(DataConstants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
@@ -114,6 +125,7 @@ public class DataProvider {
                 dataDay.setDay(cursor.getString(3));
                 dataDay.setInspiration(cursor.getString(4));
             }
+            cursor.close();
         }
         return dataDay;
     }
@@ -146,6 +158,7 @@ public class DataProvider {
                 journey.setDescription(c.getString(7));
                 journey.setImage(c.getBlob(8));
             }
+            c.close();
         }
         return journey;
     }
@@ -175,6 +188,7 @@ public class DataProvider {
                 saint.setImage100(c.getBlob(3));
                 saint.setImage200(c.getBlob(4));
             }
+            c.close();
         }
         return saint;
     }
@@ -228,6 +242,7 @@ public class DataProvider {
                 } while (c.moveToNext());
 
             }
+            c.close();
         }
         return journeys;
     }
@@ -269,6 +284,7 @@ public class DataProvider {
                 } while (c.moveToNext());
 
             }
+            c.close();
         }
         return saints;
     }
