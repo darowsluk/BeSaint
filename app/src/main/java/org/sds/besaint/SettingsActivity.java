@@ -22,5 +22,8 @@ public class SettingsActivity extends AppCompatActivity {
         mDataProvider.clearSharedData(getBaseContext());
         Toast.makeText(getBaseContext(), getResources().getString(R.string.res_txtToastResetData),
                 Toast.LENGTH_LONG).show();
+        // Go back to running activity
+        Intent intent = new Intent(this, RunningActivity.class);
+        startActivity(intent);
     }
 }

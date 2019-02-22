@@ -7,6 +7,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -125,12 +126,15 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
 
         mJourney = mDataProvider.getDataJourney(this, currentJourneyUID);
         DataDay mDay = mDataProvider.getDataDay(this, currentJourneyUID, currentDay);
-
+        FloatingActionButton floatingActionButton = findViewById(R.id.id_btnRedFloating);
 
         if (mJourney == null || mDay == null) {
+            // No journey was chosen - display defaults
             journeyTitle = DataConstants.DEFAULT_JOURNEY_TITLE;
             saintName = DataConstants.DEFAULT_SAINT_NAME;
             currentDayText = DataConstants.DEFAULT_DAY;
+            // show red button
+            floatingActionButton.show();
         }
         else {
             DataSaint mSaint = mDataProvider.getDataSaint(this, mJourney.getSaintId());
@@ -139,6 +143,8 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
                 journeyTitle = DataConstants.DEFAULT_JOURNEY_TITLE;
                 saintName = DataConstants.DEFAULT_SAINT_NAME;
                 currentDayText = DataConstants.DEFAULT_DAY;
+                // show red button
+                floatingActionButton.show();
             }
             else {
                 journeyTitle = mJourney.getTitle();
@@ -153,6 +159,8 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
                     ImageView imgView = findViewById(R.id.id_runningHeaderImage);
                     imgView.setImageDrawable(drawable);
                 }
+                // hide red button
+                floatingActionButton.hide();
             }
         }
         txtDisplay = getString(R.string.res_txtDayLabel) + " " + currentDayText;
@@ -172,6 +180,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
 
     }
 
+    // Red button
     public void onStartClick(View view) {
         Intent intent = new Intent(this, JourneyActivity.class);
         startActivity(intent);
