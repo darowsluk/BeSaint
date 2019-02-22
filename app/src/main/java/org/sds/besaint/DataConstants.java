@@ -18,4 +18,7 @@ public class DataConstants {
     public static final String DEFAULT_JOURNEY_TITLE = "";
     public static final String DEFAULT_SAINT_NAME = "";
     public static final String DEFAULT_DAY = "";
+
+    // others
+    public static final String EMPTY_STRING = "";
 }

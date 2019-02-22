@@ -74,4 +74,5 @@
     <string name="res_btnResetData">Reset</string>
     <string name="res_txtResetDescription">Clear all app data</string>
     <string name="res_txtToastResetData">All application data is cleared.</string>
+    <string name="res_txtEmptyJourney">Choose a new journey</string>
 </resources>

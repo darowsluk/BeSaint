@@ -23,16 +23,12 @@ import android.widget.TextView;
 
 import com.facebook.stetho.Stetho;
 
-import org.w3c.dom.Text;
-
 
 public class RunningActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DataProvider mDataProvider;
     private DataJourney mJourney;
-    private DataDay mDay;
-    private DataSaint mSaint;
-    private byte[] mImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +38,18 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
         // This line initializes Stetho for viewing sqlite database in chrome browser (http://facebook.github.io/stetho/)
         Stetho.initializeWithDefaults(this);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.id_ViewPager);
+        ViewPager viewPager = findViewById(R.id.id_ViewPager);
         MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), this);
         viewPager.setAdapter(myPagerAdapter);
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.id_TabLayout);
+        TabLayout tabLayout = findViewById(R.id.id_TabLayout);
         tabLayout.setupWithViewPager(viewPager);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.id_mainToolbar);
+        Toolbar toolbar = findViewById(R.id.id_mainToolbar);
         setSupportActionBar(toolbar);
 
         mDataProvider = new DataProvider();
 
         // Add drawer toggle (Head First Android Development, p. 607)
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.nav_open_drawer, R.string.nav_close_drawer) {
 
             @Override
@@ -67,7 +63,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
 
                 // Update welcome header with user name
                 String welcomeText = getString(R.string.res_txtWelcomeDefault) + " " + mDataProvider.getSharedUserName(getApplicationContext());
-                TextView txtDrawerWelcome = (TextView)findViewById(R.id.id_txtDrawerWelcome);
+                TextView txtDrawerWelcome = findViewById(R.id.id_txtDrawerWelcome);
                 txtDrawerWelcome.setText(welcomeText);
 
                 // Update current journey details
@@ -76,27 +72,39 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
                 int currentJourneyUID;
                 byte[] headImage;
 
+                // Get views handles
+                TextView navTextTitle = findViewById(R.id.id_navTextTitle);
+                TextView navTextAuthor = findViewById(R.id.id_navTextAuthor);
+                TextView navTextLevel = findViewById(R.id.id_navTextLevel);
+                TextView navTextDays = findViewById(R.id.id_navTextDays);
+                ImageView imgView = findViewById(R.id.id_navImageView);
+
                 currentJourneyUID = mDataProvider.getSharedCurrentJourneyUID(context);
                 DataJourney dataJourney = mDataProvider.getDataJourney(context, currentJourneyUID);
 
-                TextView navTextTitle = (TextView)findViewById(R.id.id_navTextTitle);
-                navTextTitle.setText(dataJourney.getTitle());
-                TextView navTextAuthor = (TextView)findViewById(R.id.id_navTextAuthor);
-                navTextAuthor.setText(dataJourney.getAuthor());
-                TextView navTextLevel = (TextView)findViewById(R.id.id_navTextLevel);
-                level = getString(R.string.res_txtLevelLabel) + " " + dataJourney.getLevelString();
-                navTextLevel.setText(level);
-                TextView navTextDays = (TextView)findViewById(R.id.id_navTextDays);
-                days = getString(R.string.res_txtDayLabel) + " " + mDataProvider.getSharedCurrentDay(context) + "/" + dataJourney.getDays();
-                navTextDays.setText(days);
-                headImage = mJourney.getImage();
-                Drawable drawable = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(headImage, 0, headImage.length));
-                int w = (int) (drawable.getIntrinsicWidth() * getResources().getDisplayMetrics().density);
-                int h = (int) (drawable.getIntrinsicHeight() * getResources().getDisplayMetrics().density);
-                drawable.setBounds(0, 0, w, h);
-                ImageView imgView = findViewById(R.id.id_navImageView);
-//                    imgView.setImageBitmap(BitmapFactory.decodeByteArray(mImage, 0, mImage.length));
-                imgView.setImageDrawable(drawable);
+                if (dataJourney != null) {
+                    navTextTitle.setText(dataJourney.getTitle());
+                    navTextAuthor.setText(dataJourney.getAuthor());
+                    level = getString(R.string.res_txtLevelLabel) + " " + dataJourney.getLevelString();
+                    navTextLevel.setText(level);
+                    days = getString(R.string.res_txtDayLabel) + " " + mDataProvider.getSharedCurrentDay(context) + "/" + dataJourney.getDays();
+                    navTextDays.setText(days);
+                    headImage = mJourney.getImage();
+                    Drawable drawable = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(headImage, 0, headImage.length));
+                    int w = (int) (drawable.getIntrinsicWidth() * getResources().getDisplayMetrics().density);
+                    int h = (int) (drawable.getIntrinsicHeight() * getResources().getDisplayMetrics().density);
+                    drawable.setBounds(0, 0, w, h);
+                    imgView.setImageDrawable(drawable);
+                }
+                else {
+                    // Current journey was cleared
+                    navTextTitle.setText(DataConstants.EMPTY_STRING);
+                    navTextAuthor.setText(getResources().getString(R.string.res_txtEmptyJourney));
+                    navTextLevel.setText(DataConstants.EMPTY_STRING);
+                    navTextDays.setText(DataConstants.EMPTY_STRING);
+                    imgView.setImageResource(R.drawable.res_img_intro80);
+                }
+
             }
 
         };
@@ -104,7 +112,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
         toggle.syncState();
 
         // Register the activity as a listener on the navigation view (p. 608)
-        NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView= findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         // Update image and title from the current journey in DB
@@ -116,7 +124,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
 
 
         mJourney = mDataProvider.getDataJourney(this, currentJourneyUID);
-        mDay = mDataProvider.getDataDay(this, currentJourneyUID, currentDay);
+        DataDay mDay = mDataProvider.getDataDay(this, currentJourneyUID, currentDay);
 
 
         if (mJourney == null || mDay == null) {
@@ -125,7 +133,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
             currentDayText = DataConstants.DEFAULT_DAY;
         }
         else {
-            mSaint = mDataProvider.getDataSaint(this, mJourney.getSaintId());
+            DataSaint mSaint = mDataProvider.getDataSaint(this, mJourney.getSaintId());
             if (mSaint == null) {
                 // TODO: Throw exception
                 journeyTitle = DataConstants.DEFAULT_JOURNEY_TITLE;
@@ -136,27 +144,26 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
                 journeyTitle = mJourney.getTitle();
                 currentDayText = mDay.getDay();
                 saintName = mSaint.getName();
-                mImage = mSaint.getImage200();
+                byte[] mImage = mSaint.getImage200();
                 if (mImage != null) {
                     Drawable drawable = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(mImage, 0, mImage.length));
                     int w = (int) (drawable.getIntrinsicWidth() * getResources().getDisplayMetrics().density);
                     int h = (int) (drawable.getIntrinsicHeight() * getResources().getDisplayMetrics().density);
                     drawable.setBounds(0, 0, w, h);
                     ImageView imgView = findViewById(R.id.id_runningHeaderImage);
-//                    imgView.setImageBitmap(BitmapFactory.decodeByteArray(mImage, 0, mImage.length));
                     imgView.setImageDrawable(drawable);
                 }
             }
         }
         txtDisplay = getString(R.string.res_txtDayLabel) + " " + currentDayText;
-        TextView saintView = (TextView) findViewById(R.id.id_runningHeaderSaint);
+        TextView saintView = findViewById(R.id.id_runningHeaderSaint);
         saintView.setText(saintName);
-        TextView titleView = (TextView) findViewById(R.id.id_runningHeaderTitle);
+        TextView titleView = findViewById(R.id.id_runningHeaderTitle);
         titleView.setText(journeyTitle);
-        TextView dayView = (TextView) findViewById(R.id.id_runningHeaderCurrentDay);
+        TextView dayView = findViewById(R.id.id_runningHeaderCurrentDay);
         dayView.setText(txtDisplay);
 
-        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.id_collapsingToolbarLayout);
+        CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.id_collapsingToolbarLayout);
         collapsingToolbarLayout.setTitleEnabled(false);
         //getSupportActionBar().setDisplayShowTitleEnabled(true);
         //toolbar.setTitle("");
@@ -176,7 +183,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         // (p. 609)
         int id = menuItem.getItemId();
-        Intent intent = null;
+        Intent intent;
         switch(id) {
             case R.id.nav_journey:
                 intent = new Intent(this, JourneyActivity.class);
@@ -202,7 +209,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
         }
         startActivity(intent);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
 
         // return boolean indicates whether the item in the drawer should be highlighted
@@ -214,7 +221,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
     public void onBackPressed() {
         // (p. 614)
         // Behavior dependent on whether drawer is open or closed
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             // Close drawer if it is currently open
             drawer.closeDrawer(GravityCompat.START);

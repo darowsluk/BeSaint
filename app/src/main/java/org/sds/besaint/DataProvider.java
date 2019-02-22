@@ -14,9 +14,6 @@ import java.io.IOException;
 // CUSTOM data provider (abstraction) for the application
 public class DataProvider {
 
-    // Constants
-    private static final String DB_TABLE_BESAINT = "besaint_data";
-
     /////////////////////////////
     // SHARED PREFERENCES DATA //
     /////////////////////////////
@@ -197,7 +194,7 @@ public class DataProvider {
         Cursor c;
         int i;
 
-        SparseArray<DataJourney> journeys = new SparseArray<DataJourney>();
+        SparseArray<DataJourney> journeys = new SparseArray<>();
         DataJourney journey;
 
         // Load data from DB
@@ -251,7 +248,7 @@ public class DataProvider {
         Cursor c;
         int i;
 
-        SparseArray<DataSaint> saints = new SparseArray<DataSaint>();
+        SparseArray<DataSaint> saints = new SparseArray<>();
         DataSaint saint;
 
         // Load data from DB
@@ -290,9 +287,8 @@ public class DataProvider {
     }
 
     // Helper DB methods
-    public SQLiteDatabase getDB(Context context) {
+    private SQLiteDatabase getDB(Context context) {
         SQLiteDatabase mDb;
-        int mVersion;
 
         DatabaseHelper mDBHelper = DatabaseHelper.getInstance(context);
         try {

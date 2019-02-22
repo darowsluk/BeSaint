@@ -21,13 +21,12 @@
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:ellipsize="marquee"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            app:fontFamily="sans-serif-smallcaps"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/res_txtWelcomeDefault"
-            android:ellipsize="marquee"/>
+            tools:text="@string/res_txtWelcomeDefault" />
 
         <TextView
             android:id="@+id/id_navTextTitle"
