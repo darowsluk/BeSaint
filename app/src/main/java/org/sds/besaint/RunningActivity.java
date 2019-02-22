@@ -103,7 +103,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
                     navTextAuthor.setText(getResources().getString(R.string.res_txtEmptyJourney));
                     navTextLevel.setText(DataConstants.EMPTY_STRING);
                     navTextDays.setText(DataConstants.EMPTY_STRING);
-                    imgView.setImageResource(R.drawable.res_img_intro80);
+                    imgView.setImageResource(R.drawable.res_img_compass2_80);
                 }
 
             }
@@ -117,7 +117,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
         navigationView.setNavigationItemSelectedListener(this);
 
         // Update image and title from the current journey in DB
-        String txtDisplay, saintName, journeyTitle, currentDayText;
+        String saintName, journeyTitle, currentDayText;
 
         int currentJourneyUID, currentDay;
         currentJourneyUID = mDataProvider.getSharedCurrentJourneyUID(this);
@@ -148,7 +148,7 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
             }
             else {
                 journeyTitle = mJourney.getTitle();
-                currentDayText = mDay.getDay();
+                currentDayText = getString(R.string.res_txtDayLabel) + " " + mDay.getDay();
                 saintName = mSaint.getName();
                 byte[] mImage = mSaint.getImage200();
                 if (mImage != null) {
@@ -163,13 +163,12 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
                 floatingActionButton.hide();
             }
         }
-        txtDisplay = getString(R.string.res_txtDayLabel) + " " + currentDayText;
         TextView saintView = findViewById(R.id.id_runningHeaderSaint);
         saintView.setText(saintName);
         TextView titleView = findViewById(R.id.id_runningHeaderTitle);
         titleView.setText(journeyTitle);
         TextView dayView = findViewById(R.id.id_runningHeaderCurrentDay);
-        dayView.setText(txtDisplay);
+        dayView.setText(currentDayText);
 
         CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.id_collapsingToolbarLayout);
         collapsingToolbarLayout.setTitleEnabled(false);

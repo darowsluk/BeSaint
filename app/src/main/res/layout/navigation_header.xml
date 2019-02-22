@@ -71,7 +71,7 @@
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/id_txtDrawerWelcome"
-            app:srcCompat="@drawable/res_img_intro80" />
+            app:srcCompat="@drawable/res_img_compass2_80" />
 
         <TextView
             android:id="@+id/id_navTextLevel"
