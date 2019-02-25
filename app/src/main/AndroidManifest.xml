@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/EcclesialTheme">
-        <activity android:name=".TransitionActivity"></activity>
+        <activity android:name=".HelpActivity"></activity>
+        <activity android:name=".TransitionActivity" />
         <activity
             android:name=".SignActivity"
             android:parentActivityName=".RunningActivity">

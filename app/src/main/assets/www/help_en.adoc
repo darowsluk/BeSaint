@@ -1,0 +1,104 @@
+= BeSaint 1.0 User Manual
+Author <besaintsds@gmail.com>
+v1.0, 2019-02-25
+:toc:
+:toc-title: Table of Contents
+:toclevels: 1
+
+== Introduction
+
+Welcome to the *BeSaint app!*
+
+It is a smartphone android app for planning your spiritual growth.
+
+We believe that the need to grow spiritually is engrained in all people. It is difficult, however,
+to find the right guide on the spiritual journey. Therefore we have chosen the *saints* as companions
+on our own journey to happiness.
+
+*So learn from the saints and start your own journey!*
+
+== Getting started
+
+To start using this app, we need to select a *journey*.
+
+=== Red button
+
+Press the *big red button* in the bottom right corner.
+
+NOTE: You will enter a journey selection screen
+
+=== Select a saint
+
+Swipe through the carousel of saints at the top of the screen.
+
+=== Select a journey
+
+Select a journey by tapping a card below your chosen saint.
+
+NOTE: You will enter a new screen with journey details.
+
+Press the START button to accept a journey or go back to the selection screen.
+
+== Journey
+
+Each journey consists of a series of days, which will guide you on the way by means of three
+views described by three tabs on the main screen.
+
+=== Inspiration
+
+The first tab contains an inspiration area, which holds a *text based on writings of your chosen saint.* It is meant to guide you in your personal journey to attain a certain virtue or grow in understanding of a particular aspect of your spirituality. The inspiration usually ends with a simple "to do" task as a way of putting the given words into practice.
+
+=== Plan
+
+The second tab contains an area designed for tracking your spiritual growth.
+
+Select the *checkbox* if you were able to finish the given task, otherwise leave it unselected. *Be honest with yourself*. It will help you to track your progress in the next tab.
+
+At the end of the day select "Finished Day" and click the button FINISH to start a new day.
+
+NOTE: You will enter the inspiration area with the text for the next day.
+
+=== Progress
+
+The third tab contains an area displaying your current progress. It will show you how many tasks you have completed successfully on all your journeys.
+
+TIP: Each day, read the daily inspiration, perform the task in the plan and check up on your progress.
+
+== Navigation Drawer
+
+Enter into the navigation drawer by means of:
+
+1. clicking the "hamburger" icon at the top left corner
+2. sliding your finger from the left side border into the right
+
+NOTE: The top part of the drawer displays a welcome message and information on your currently selected journey.
+
+=== Journey
+
+Press the *journey* icon to enter the journey selection screen. It performs the same function as the big red button of the main screen.
+
+NOTE: The red button appears on the main screen, when there is no selected journey.
+
+=== History
+
+Press the *history* icon to see all your previously started journeys.
+
+WARNING: This feature is not implemented yet.
+
+=== Profile
+
+Press the *profile* icon to enter a screen, which will allow you to enter your name. It will be used to personalize your experience with the app.
+
+=== Settings
+
+Press the *settings* icon to change the available options for the app.
+
+NOTE: Currently there is only a RESET button, which will clear all your user data.
+
+=== About
+
+Press the *about* icon to display basic information about the program.
+
+=== Help
+
+Press the *help* icon to display the user manual.

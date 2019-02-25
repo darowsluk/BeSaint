@@ -1,0 +1,101 @@
+= BeSaint 1.0 Instrukcja obsługi
+Autor <besaintsds@gmail.com>
+v1.0, 2019-02-25
+:toc:
+:toc-title: Spis Treści
+:toclevels: 1
+
+== Wprowadzenie
+
+Witamy w aplikacji *BeSaint!*
+
+Jest to aplikacja na smartfona z systemem android, której celem jest pomoc w planowaniu Twojego duchowego wzrostu.
+
+Wierzymy, że *rozwój duchowy jest dla każdego*. Trudno jednak znaleźć odpowiednią pomoc na tej drodze. Dlatego wybraliśmy *świętych* jako najlepszych przewodników w naszej podróży ku szczęściu.
+
+*Zatem ucz się od świętych i rozpocznij swoją własną podróż!*
+
+== Pierwsze kroki
+
+Na początku trzeba wybrać konkretną *podróż*.
+
+=== Czerwony przycisk
+
+Naciśnij *duży czerwony przycisk* w dolnym prawym roku głównego ekranu.
+
+NOTE: Zostaniesz skierowany do ekranu wyboru podróży.
+
+=== Wybierz świętego
+
+Przeciągnij palcem po karuzeli świętych w górnej części ekranu.
+
+=== Wybierz podróż
+
+Wybierz podróż naciskając jedną z kart poniżej wybranego świętego.
+
+NOTE: Zostaniesz skierowany do ekranu szczegółowego podróży.
+
+Naciśnij przycisk START, aby rozpocząć podróż, lub powróć do ekranu wyboru.
+
+== Podróż
+
+Każda podróż zawiera serię dni, które poprowadzą Cię drogą duchowego wzrostu za pomocą trzech kart głównego ekranu.
+
+=== Inspiracja
+
+Na pierwszej karcie znajduje się *tekst inspirowany dziełami wybranego świętego*. Poprowadzi Cię na Twojej osobistej drodze zdobywania konkretnej cnoty lub pogłębienia określonego aspektu Twojej duchowości. Tekst inspiracji zazwyczaj kończy się proponowanym postanowieniem, które pomaga wprowadzić w życie poznane treści.
+
+=== Plan
+
+Na drugiej karcie znajduje się przestrzeń, która pomoże Ci planować swoją podróż.
+
+Zaznacz *pole wyboru* jeśli udało Ci się zrealizować zaproponowane na dziś postanowienie. W przeciwnym wypadku pozostaw je niezaznaczone. *Bądź szczery wobec siebie*. Pomoże Ci to śledzić Twoje postępy w kolejnej karcie.
+
+Na końcu dnia naciśnij "Zakończ dzień", a następnie kliknij przycisk FINISH, aby rozpocząć nowy dzień.
+
+=== Postęp
+
+Na trzeciej karcie wyświetlane są Twoje aktualne postępy. Zobaczysz tutaj na ile udało Ci się zrealizować proponowane zadania we wszystkich podjętych przez Ciebie podróżach.
+
+TIP: Każdego dnia przeczytaj tekst inspiracji, zrób określone zadanie i zaznacz je na karcie planu, a na końcu sprawdź jak Ci idzie na karcie postępu.
+
+== Szuflada nawigacji
+
+Otwórz szufladę nawigacji za pomocą:
+
+1. przyciśnięcia ikonki "hamburgera" w lewym górnym rogu
+2. przeciągnięcia palcem od lewego krańca ekranu do środka
+
+NOTE: W górnej części szuflady zostanie wyświetlone powitanie oraz opis aktualnie wybranej podróży.
+
+=== Podróż
+
+Naciśnij ikonkę *podróży*, aby wyświetlić ekran wyboru podróży. Naciśnięcie tej ikonki pełni tę samą funkcję, co naciśnięcie dużego czerwonego przycisku na głównym ekranie.
+
+NOTE: Czerwony przycisk pojawia się na głównym ekranie tylko wtedy, gdy nie została wybrana jeszcze żadna podróż.
+
+=== Historia
+
+Naciśnij ikonkę *historia*, aby wyświetlić ekran zawierający wszystkie rozpoczęte dotychczas przez Ciebie podróże.
+
+WARNING: Ta funkcja nie została jeszcze udostępniona.
+
+=== Profil
+
+Naciśnij ikonkę *profil*, aby wyświetlić ekran pozwalający Ci wpisać Twoje imię. Będzie ono użyte do spersonalizowania Twojego korzystania z tej aplikacji.
+
+TIP: W przyszłości będzie udostępniona możliwość pełnego profilu w chmurze.
+
+=== Ustawienia
+
+Naciśnij ikonkę *ustawienia*, aby zmienić dostępne opcje aplikacji.
+
+NOTE: Obecnie udostępnione jest tylko wyczyszczenie wszystkich danych aplikacji.
+
+=== Informacje
+
+Naciśnij ikonkę *informacje*, aby wyświetlić podstawowe informacje o aplikacji.
+
+=== Pomoc
+
+Naciśnij ikonkę *pomoc*, aby wyświetlić instrukcję obsługi.

@@ -74,4 +74,5 @@
     <string name="res_txtResetDescription">Wyczyść wszystkie dane aplikacji</string>
     <string name="res_txtToastResetData">Wszystkie dane aplikacji są wyczyszczone.</string>
     <string name="res_txtEmptyJourney">Wybierz nową podróż</string>
+    <string name="res_langHelpFile">help_pl.html</string>
 </resources>

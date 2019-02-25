@@ -209,11 +209,10 @@ public class RunningActivity extends AppCompatActivity implements NavigationView
                 intent = new Intent(this, AboutActivity.class);
                 break;
             case R.id.nav_help:
-                // TODO: open new activity with help
-                intent = new Intent(this, AboutActivity.class);
+                intent = new Intent(this, HelpActivity.class);
                 break;
             default:
-                intent = new Intent(this, AboutActivity.class);
+                intent = new Intent(this, HelpActivity.class);
         }
         startActivity(intent);
 
