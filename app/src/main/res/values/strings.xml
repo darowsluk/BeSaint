@@ -35,8 +35,9 @@
     <string name="res_txtSettingsMenu">Settings</string>
     <string name="res_txtProfileMenu">Profile</string>
     <string name="res_txtRunningMenu">Active</string>
-    <string name="res_txtVersion">VERSION 0.1</string>
-    <string name="res_txtMission"><u>Mission Statement</u></string>
+    <string name="res_txtVersion">BeSaint - VERSION 1.0</string>
+    <string name="res_txtMission">Unofficial prototype application by the Polish Province of Salvatorians\nwww.sds.pl
+        \n\n<b>Developer:</b> Fr. Łukasz Darowski SDS besaintsds@gmail.com\n\nAll texts in the app are currently used without explicit permission.</string>
     <string name="res_txtLicence"><u>End User Licence Agreement</u></string>
     <string name="res_txtPrivacy"><u>Privacy Statement</u></string>
     <string name="res_txtNightMode">Night mode</string>

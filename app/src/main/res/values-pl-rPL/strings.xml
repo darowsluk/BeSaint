@@ -37,8 +37,10 @@
     <string name="res_txtSettingsMenu">Ustawienia</string>
     <string name="res_txtProfileMenu">Profil</string>
     <string name="res_txtRunningMenu">Aktywny</string>
-    <string name="res_txtMission"><u>Mission Statement</u></string>
-    <string name="res_txtVersion">WERSJA 0.1</string>
+    <string name="res_txtMission">Nieoficjalny prototyp aplikacji Polskiej Prowincji Salwatorianów\nwww.sds.pl
+        \n\n<b>Autor:</b> Ks. Łukasz Darowski SDS\nbesaintsds@gmail.com
+        \n\nWszystkie teksty w aplikacji są obecnie używane bez wyraźnego pozwolenia.</string>
+    <string name="res_txtVersion">BeSaint - WERSJA 1.0</string>
     <string name="res_txtLicence"><u>End User Licence Agreement</u></string>
     <string name="res_txtPrivacy"><u>Privacy Statement</u></string>
     <string name="res_txtNightMode">Night mode</string>
