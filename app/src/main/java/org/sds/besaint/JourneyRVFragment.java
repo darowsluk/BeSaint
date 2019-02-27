@@ -24,6 +24,9 @@ public class JourneyRVFragment extends Fragment {
     private int[] mJourneyUIDs;
     private JourneyRVAdapter mAdapter;
 
+    // localized strings
+    private static String mTxtLevel, mTxtDay;
+
     public JourneyRVFragment() {
         // Required empty public constructor
         mPosition = 1; // TODO: fix this properly
@@ -38,6 +41,10 @@ public class JourneyRVFragment extends Fragment {
         updateFragmentData(mPosition);
         jRecycler.setAdapter(mAdapter);
 
+        // localized strings
+        mTxtLevel = getActivity().getResources().getString(R.string.res_txtLevelLabel);
+        mTxtDay = getActivity().getResources().getString(R.string.res_txtDayLabelPlural);
+
         // Specify which layout to use
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         jRecycler.setLayoutManager(layoutManager);
@@ -47,8 +54,6 @@ public class JourneyRVFragment extends Fragment {
             @Override
             public void onClick(int position) {
                 Intent intent = new Intent (getActivity(), JourneyDetailsActivity.class);
-                //Toast toast = Toast.makeText(getActivity(), "Showing JourneyDetailsActivity", Toast.LENGTH_SHORT);
-                //toast.show();
                 intent.putExtra(JourneyDetailsActivity.EXTRA_JOURNEY_UID, translatePositionToJourneyUID(position));
                 getActivity().startActivity(intent);
             }
@@ -82,9 +87,9 @@ public class JourneyRVFragment extends Fragment {
             mJourneyUIDs[i] = journey.getJourneyUID();
             imageIds[i] = journey.getImage();
             titles[i] = journey.getTitle();
-            levels[i] = "Level " + Integer.toString(journey.getLevel());
+            levels[i] = mTxtLevel + " " + Integer.toString(journey.getLevel());
             authors[i] = journey.getAuthor();
-            days[i] = Integer.toString(journey.getDays()) + " days";
+            days[i] = Integer.toString(journey.getDays()) + " " + mTxtDay;
         }
         mAdapter.updateData(imageIds, titles, levels, authors, days);
         mAdapter.notifyDataSetChanged();

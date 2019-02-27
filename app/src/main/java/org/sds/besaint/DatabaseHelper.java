@@ -13,7 +13,7 @@ import java.io.OutputStream;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static DatabaseHelper ourInstance = null;
-    private static String DB_NAME = "saints.sqlite3";
+    private static String DB_NAME = ""; // localized
     private static String DB_PATH = "";
     private static final int DB_VERSION = 1;
 
@@ -23,14 +23,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // SINGLETON - private constructor
     private DatabaseHelper(Context context) {
-        super(context, DB_NAME, null, DB_VERSION);
-        if (android.os.Build.VERSION.SDK_INT >= 17)
-            //DB_PATH = context.getApplicationInfo().dataDir + "/assets/databases/";
+        super(context, context.getResources().getString(R.string.res_dbName), null, DB_VERSION);
+        if (android.os.Build.VERSION.SDK_INT >= 17) {
             DB_PATH = context.getFilesDir() + "/assets/databases/";
-        else
+        }
+        else {
             DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
+        }
         this.mContext = context;
-
+        DB_NAME = context.getResources().getString(R.string.res_dbName);
         copyDataBase();
 
         this.getReadableDatabase();
